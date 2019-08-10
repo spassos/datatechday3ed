@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	<changeSet author="s.passos" id="1">
+		<sqlFile dbms="mssql" encoding="utf8" endDelimiter="\nGO"
+			path="sql/01_tabelas_iniciais.sql" relativeToChangelogFile="true"
+			splitStatements="true"  stripComments="true"   />
+		<comment>Estrutura de tabelas do App</comment>
+	</changeSet>
+	<changeSet author="s.passos" id="2">
+		<sqlFile dbms="mssql" encoding="utf8" endDelimiter="\nGO"
+			path="sql/02_tabela_log.sql" relativeToChangelogFile="true"
+			splitStatements="true" stripComments="true" />
+		<comment>Criação da tabela log para auditoria</comment>
+	</changeSet>
+	<changeSet author="w.sousa" id="3">
+		<sqlFile dbms="mssql" encoding="utf8" endDelimiter="\nGO"
+			path="sql/03_mock_dados.sql" relativeToChangelogFile="true"
+			splitStatements="true" stripComments="true" />
+		<comment>Dados mockados para o desenvolvimento do App</comment>
+	</changeSet>
+	<changeSet author="s.cascaes" id="4">
+		<sqlFile dbms="mssql" encoding="utf8" endDelimiter="\nGO"
+			path="sql/04_stored_procedures.sql" relativeToChangelogFile="true"
+			splitStatements="true" stripComments="true" />
+		<comment>Stored Procedures para manutenção da conta digital</comment>
+	</changeSet>
+</databaseChangeLog>
